@@ -1,0 +1,78 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.pulse {
+    animation: pulse-animation 1s infinite alternate;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+#animatedImage {
+    width: 200px;
+    height: auto;
+    border: 1px solid #ccc;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+#animatedImage.fade-out {
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+#preferencePanel {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#preferencePanel label, #preferencePanel input, #preferencePanel button {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#preferencePanel input[type="range"] {
+    width: 80%;
+    margin: 10px auto;
+}
+
+#speedValue {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
